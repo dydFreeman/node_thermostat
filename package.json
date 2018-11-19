@@ -1,7 +1,7 @@
 {
   "name": "node_thermostat",
   "version": "1.0.0",
-  "description": "A thermostat based on NodeJs and MongoDb",
+  "description": "A thermostat based on NodeJs and Firebase",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
   "keywords": [
     "node",
     "thermostat",
-    "mongodb",
+    "firebase",
     "iot"
   ],
   "author": "Riccardo Pancotti",
@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "mongoose": "^5.3.12"
+    "firebase-admin": "^6.1.0"
   }
 }

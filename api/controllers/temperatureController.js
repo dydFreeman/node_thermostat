@@ -1,21 +1,28 @@
 'use strict';
 
-var mongoose = require('mongoose'),
-  Temperature = mongoose.model('Temperature');
+// Import Admin SDK
+var admin = require('firebase-admin');
 
-exports.list_all_temperatures = function(req, res) {
-    Temperature.find({}, function(err, task) {
-    if (err)
-      res.send(err);
-    res.json(task);
+// Get a database reference to our blog
+var db = admin.database();
+var ref = db.ref();
+
+exports.list_all_temperatures = function (req, res) {
+  var tempRef = ref.child('temperature');
+  tempRef.orderByChild('timestamp').once('value', function(data) {
+    res.send(data);
   });
+
 };
 
-exports.create_a_temperature = function(req, res) {
-  var new_temperature = new Temperature(req.body);
-  new_temperature.save(function(err, task) {
-    if (err)
-      res.send(err);
-    res.json(task);
+exports.create_a_temperature = function (req, res) {
+  var value = {
+    ...req.body,
+    timestamp: new Date().getTime()
+  }
+  var tempRef = ref.child('temperature');
+  tempRef.push(value).then(() => {
+    console.log('req.body', req.body);
+    res.send('Temperature set', req.body);
   });
 };
