@@ -1,2 +1,2 @@
 # node_thermostat
-A thermostat based on NodeJs and MongoDb.
+A thermostat based on NodeJs and Firebase.
