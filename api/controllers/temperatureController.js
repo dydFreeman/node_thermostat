@@ -12,7 +12,6 @@ exports.list_all_temperatures = function (req, res) {
   tempRef.orderByChild('timestamp').once('value', function(data) {
     res.send(data);
   });
-
 };
 
 exports.create_a_temperature = function (req, res) {

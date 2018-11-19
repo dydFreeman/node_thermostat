@@ -4,7 +4,7 @@
   "description": "A thermostat based on NodeJs and Firebase",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jshint server.js",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dydFreeman/node_thermostat#readme",
   "devDependencies": {
+    "jshint": "^2.9.6",
     "nodemon": "^1.18.6"
   },
   "dependencies": {
