@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "firebase-admin": "^6.1.0"
+    "firebase-admin": "^6.1.0",
+    "noble": "^1.9.1"
   }
 }
