@@ -4,15 +4,15 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 // INIT Firebase
-var admin = require("firebase-admin");
-// the following file should be replaced with
-// the one generated here: https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk
-var serviceAccount = require('./nodethermostat-firebase-adminsdk-ngk0t-e0cfb4b175.json');
+// var admin = require("firebase-admin");
+// // the following file should be replaced with
+// // the one generated here: https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk
+// var serviceAccount = require('./nodethermostat-firebase-adminsdk-ngk0t-e0cfb4b175.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://nodethermostat.firebaseio.com"
-});
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://nodethermostat.firebaseio.com"
+// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
