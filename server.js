@@ -3,7 +3,6 @@ var express = require('express'),
   port = process.env.PORT || 5000,
   bodyParser = require('body-parser');
 
-
 // INIT Firebase
 var admin = require("firebase-admin");
 // the following file should be replaced with
@@ -25,3 +24,7 @@ routes(app); //register the route
 app.listen(port);
 
 console.log('Thermostat server started on: ' + port);
+
+
+var noble = require('noble');  
+noble.startScanning(); // any service UUID, no duplicates
